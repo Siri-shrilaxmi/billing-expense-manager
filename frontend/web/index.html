@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta
+    content="IE=Edge"
+    http-equiv="X-UA-Compatible"
+  >
+
+  <meta
+    name="description"
+    content="Billing Expense Manager"
+  >
+
+  <!-- Mobile web app -->
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Billing Expense Manager"
+  >
+
+  <!-- Apple icon -->
+  <link
+    rel="apple-touch-icon"
+    href="icons/Icon-192.png"
+  >
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png"
+  >
+
+  <title>Billing Expense Manager</title>
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+</head>
+
+<body>
+
+  <!-- ========================================================= -->
+  <!-- TESSERACT.JS                                             -->
+  <!-- ========================================================= -->
+
+  <script
+    src="https://unpkg.com/tesseract.js@v4.0.2/dist/tesseract.min.js">
+  </script>
+
+  <!-- ========================================================= -->
+  <!-- FLUTTER TESSERACT WEB BRIDGE                             -->
+  <!-- ========================================================= -->
+
+  <script>
+    async function _extractText(
+      imagePath,
+      mapData
+    ) {
+      const worker =
+        await Tesseract.createWorker();
+
+      try {
+        await worker.load();
+
+        await worker.loadLanguage(
+          mapData.language
+        );
+
+        await worker.initialize(
+          mapData.language
+        );
+
+        await worker.setParameters(
+          mapData.args || {}
+        );
+
+        const result =
+          await worker.recognize(
+            imagePath
+          );
+
+        if (
+          mapData.args &&
+          mapData.args["tessjs_create_hocr"]
+        ) {
+          return result.data.hocr;
+        }
+
+        return result.data.text;
+
+      } finally {
+        await worker.terminate();
+      }
+    }
+  </script>
+
+  <!-- ========================================================= -->
+  <!-- FLUTTER WEB BOOTSTRAP                                    -->
+  <!-- ========================================================= -->
+
+  <script
+    src="flutter_bootstrap.js"
+    async>
+  </script>
+
+</body>
+</html>

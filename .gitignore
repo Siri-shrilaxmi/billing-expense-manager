@@ -1,0 +1,480 @@
+# ============================================================
+# BILLING EXPENSE MANAGER
+# Root .gitignore
+#
+# Project structure:
+#
+# billing-expense-manager/
+# ├── backend/       Spring Boot
+# ├── frontend/      Flutter
+# └── .gitignore
+#
+# IMPORTANT:
+# Flutter Windows source files are intentionally NOT ignored.
+# This includes:
+#   frontend/windows/CMakeLists.txt
+#   frontend/windows/runner/**
+#   frontend/windows/runner/resources/app_icon.ico
+#
+# Only generated/build files are ignored.
+# ============================================================
+
+
+# ============================================================
+# OPERATING SYSTEM
+# ============================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+application_secretkey.txt
+
+
+# ============================================================
+# GENERAL TEMPORARY / BACKUP FILES
+# ============================================================
+
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*~
+*.swp
+*.swo
+
+
+# ============================================================
+# LOGS
+# ============================================================
+
+*.log
+logs/
+
+
+# ============================================================
+# VISUAL STUDIO CODE
+# ============================================================
+
+.vscode/
+
+# Keep shared project configuration when present.
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+
+# ============================================================
+# INTELLIJ / ANDROID STUDIO
+# ============================================================
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+
+# ============================================================
+# ECLIPSE
+# ============================================================
+
+.classpath
+.project
+.settings/
+
+
+# ============================================================
+# NETBEANS
+# ============================================================
+
+/nbproject/private/
+/nbbuild/
+/.netbeans/
+nb-configuration.xml
+
+
+# ============================================================
+# FLUTTER / DART GENERATED FILES
+# ============================================================
+
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+
+# ============================================================
+# FLUTTER BUILD OUTPUT
+#
+# Includes:
+#   frontend/build/
+# ============================================================
+
+build/
+**/build/
+
+
+# ============================================================
+# FLUTTER COVERAGE
+# ============================================================
+
+coverage/
+
+
+# ============================================================
+# FLUTTER WINDOWS GENERATED FILES
+#
+# DO NOT IGNORE frontend/windows/** AS A WHOLE.
+#
+# The Windows runner source/configuration is part of the
+# project and must remain tracked.
+# ============================================================
+
+frontend/windows/flutter/ephemeral/
+
+frontend/windows/flutter/generated_plugin_registrant.cc
+frontend/windows/flutter/generated_plugin_registrant.h
+frontend/windows/flutter/generated_plugins.cmake
+
+
+# ============================================================
+# FLUTTER LINUX GENERATED FILES
+# ============================================================
+
+frontend/linux/flutter/ephemeral/
+
+
+# ============================================================
+# FLUTTER MACOS GENERATED FILES
+# ============================================================
+
+frontend/macos/Flutter/ephemeral/
+frontend/macos/Pods/
+frontend/macos/.symlinks/
+
+
+# ============================================================
+# FLUTTER IOS GENERATED FILES
+# ============================================================
+
+frontend/ios/Pods/
+frontend/ios/.symlinks/
+frontend/ios/Flutter/Generated.xcconfig
+frontend/ios/Flutter/flutter_export_environment.sh
+
+
+# ============================================================
+# FLUTTER ANDROID GENERATED FILES
+# ============================================================
+
+frontend/android/.gradle/
+frontend/android/.idea/
+frontend/android/local.properties
+frontend/android/key.properties
+
+frontend/android/app/debug/
+frontend/android/app/profile/
+frontend/android/app/release/
+
+
+# ============================================================
+# CMAKE GENERATED FILES
+#
+# These may be generated inside build directories.
+# ============================================================
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+cmake-build-*/
+
+
+# ============================================================
+# WINDOWS GENERATED BUILD / DEBUG OUTPUT
+#
+# IMPORTANT:
+# Do NOT ignore:
+#
+#   frontend/windows/runner/
+#   frontend/windows/CMakeLists.txt
+#
+# Those are project source files.
+# ============================================================
+
+Debug/
+Release/
+x64/
+x86/
+
+*.obj
+*.pdb
+*.idb
+*.ilk
+
+
+# ============================================================
+# SPRING BOOT / JAVA - MAVEN
+# ============================================================
+
+backend/target/
+
+
+# ============================================================
+# SPRING BOOT / JAVA - GRADLE
+# ============================================================
+
+backend/.gradle/
+
+
+# ============================================================
+# JAVA GENERATED FILES
+# ============================================================
+
+*.class
+
+
+# ============================================================
+# BACKEND LOGS
+# ============================================================
+
+backend/logs/
+backend/*.log
+
+
+# ============================================================
+# BACKEND IDE FILES
+# ============================================================
+
+backend/.idea/
+backend/*.iml
+
+
+# ============================================================
+# ENVIRONMENT FILES
+#
+# Keep example files such as:
+#
+#   .env.example
+#
+# tracked in Git.
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+
+# ============================================================
+# LOCAL SPRING CONFIGURATION
+#
+# application.properties itself is NOT ignored because it may
+# contain required non-secret application configuration.
+#
+# Put developer-specific secrets in application-local.*
+# ============================================================
+
+application-local.properties
+application-local.yml
+application-local.yaml
+
+backend/src/main/resources/application-local.properties
+backend/src/main/resources/application-local.yml
+backend/src/main/resources/application-local.yaml
+
+
+# ============================================================
+# SECRET FILES / DIRECTORIES
+# ============================================================
+
+secrets/
+secret/
+
+*.secret
+*.secrets
+
+
+# ============================================================
+# DATABASE LOCAL FILES
+# ============================================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# Compressed database dumps
+*.sql.gz
+
+
+# ============================================================
+# IMPORTANT DATABASE RULE
+#
+# Regular .sql files are intentionally NOT ignored.
+#
+# So these can be committed:
+#
+#   database/schema.sql
+#   database/seed.sql
+#   database/setup.sql
+#
+# This keeps the project reproducible.
+# ============================================================
+
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.ipynb_checkpoints/
+
+
+# ============================================================
+# PYTHON / AI CACHE
+# ============================================================
+
+.cache/
+hf_cache/
+huggingface/
+model_cache/
+
+
+# ============================================================
+# LARGE AI MODEL FILES
+#
+# Qwen model files should not be committed into Git.
+# ============================================================
+
+models/
+
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+
+# ============================================================
+# LOCAL RECEIPT / OCR / IMAGE PROCESSING DATA
+#
+# Runtime/development files are ignored.
+# ============================================================
+
+uploads/
+uploaded_images/
+
+sanitized/
+processed_images/
+
+temp/
+tmp/
+cache/
+
+
+# ============================================================
+# IMPORTANT IMAGE RULE
+#
+# DO NOT globally ignore:
+#
+#   *.png
+#   *.jpg
+#   *.jpeg
+#   *.webp
+#
+# Your Flutter application may legitimately contain assets:
+#
+#   frontend/assets/logo.png
+#   frontend/assets/icons/...
+#   frontend/windows/runner/resources/app_icon.ico
+#
+# Those should be allowed into Git.
+# ============================================================
+
+
+# ============================================================
+# WINDOWS PACKAGING OUTPUT
+# ============================================================
+
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+
+
+# ============================================================
+# RELEASE ARTIFACTS
+#
+# Only ignore these if they are generated distribution output.
+# ============================================================
+
+artifacts/
+frontend/release/
+
+
+# ============================================================
+# HTTP / LOCAL DEVELOPMENT
+# ============================================================
+
+.http/
+.history/
+
+
+# ============================================================
+# FLUTTER WEB GENERATED / LOCAL FILES
+# ============================================================
+
+frontend/web/.dart_tool/
+
+
+# ============================================================
+# GENERATED NATIVE ARTIFACTS
+#
+# Keep source files such as .cpp/.h/.rc/.manifest/.ico.
+# Only ignore generated compiler output above.
+# ============================================================
+
+# ============================================================
+# BACKEND OCR / DEVELOPMENT TEST FILES
+# ============================================================
+
+backend/ocr/test.*
+backend/ocr/test*.*
+backend/processed.jpg
+backend/test.jpg
+backend/test1.jpg
+backend/test*.jpg
+
+
+# ============================================================
+# FLUTTER GENERATED LINUX FILES
+# ============================================================
+
+frontend/linux/flutter/ephemeral/
+frontend/linux/flutter/generated_plugin_registrant.cc
+frontend/linux/flutter/generated_plugin_registrant.h
+frontend/linux/flutter/generated_plugins.cmake
+
+
+# ============================================================
+# END
+# ============================================================
